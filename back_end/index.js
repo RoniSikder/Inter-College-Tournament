@@ -14,7 +14,6 @@ app.use(express.urlencoded({
   extended: true,
   parameterLimit:50000
 }));
-// install "cors" to work done
 
 let url="mongodb+srv://ronisikder:6291785756@cluster0.vs57g.mongodb.net/Match_Details?retryWrites=true&w=majority"
 
@@ -73,6 +72,18 @@ app.post('/register',(req,res)=>{
     })
 })
 
+app.get('/collage_view',(req,res)=>{
+    vold.find({},(err,data)=>{
+        if(err){
+            res.send(err)
+        }
+        else{
+            console.log(data)
+            res.json(data)
+        }
+    })
+})
+
 app.get('/view',(req,res)=>{
     hold.find({},(err,data)=>{
         if(err){
@@ -121,7 +132,7 @@ app.patch('/view/:id', (req, res) => {
 
 app.post('/login',(req,res)=>{
     const { email, pass } =req.body
-    console.log(req.body);
+    // console.log(req.body);
     vold.findOne({email:email},(err,user)=>{
             if(user){
                 if(pass===user.pass){

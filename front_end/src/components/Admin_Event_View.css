@@ -1,0 +1,24 @@
+.cars{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 5%;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.car{
+    display: block;
+    border: 2px solid black;
+    height: 15rem;
+    width: 25%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+}
+#adder{
+    cursor: pointer;
+}
+.container{
+    height: 100%;
+    overflow-y: auto;
+}
